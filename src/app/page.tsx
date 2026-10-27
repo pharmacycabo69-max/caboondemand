@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ContactButton } from "@/components/ContactButton";
 import {
@@ -10,6 +11,21 @@ import {
   site,
   steps,
 } from "@/config/site";
+
+const visits = [
+  {
+    src: "/photos/visit-living-room.jpg",
+    alt: "Nurse starting an IV for a guest on a sofa in a villa living room with ocean views",
+  },
+  {
+    src: "/photos/visit-terrace.jpg",
+    alt: "Nurse preparing IV supplies while guests relax on a villa terrace overlooking the bay",
+  },
+  {
+    src: "/photos/visit-rooftop.jpg",
+    alt: "Two guests receiving IV hydration on rooftop lounge chairs with an ocean view",
+  },
+];
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -41,9 +57,10 @@ export default function Home() {
       <main className="pb-24 md:pb-0">
         {/* Hero */}
         <section className="bg-brand-navy text-white">
-          <div className="mx-auto max-w-5xl px-5 pb-14 pt-8 md:pb-20">
+          <div className="mx-auto grid max-w-5xl items-center gap-10 px-5 pb-14 pt-8 md:grid-cols-[1.2fr_1fr] md:pb-20">
+            <div>
             <p className="text-lg font-bold tracking-tight">{site.name}</p>
-            <h1 className="mt-10 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
+            <h1 className="mt-10 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
               Pharmacy, IV therapy and a doctor — delivered to your villa in Los Cabos.
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-slate-200">
@@ -60,6 +77,16 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            </div>
+            {/* Hidden on mobile so the CTA stays above the fold and no image blocks LCP */}
+            <Image
+              src="/photos/hero.jpg"
+              alt="Nurse attending guests receiving IV hydration by the pool at a Los Cabos villa"
+              width={765}
+              height={1020}
+              sizes="(min-width: 768px) 400px, 0px"
+              className="hidden aspect-[4/5] w-full rounded-2xl object-cover md:block"
+            />
           </div>
         </section>
 
@@ -84,6 +111,25 @@ export default function Home() {
                   className="mt-4 py-3"
                 />
               </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Real visits */}
+        <section className="mx-auto max-w-5xl px-5 pb-16">
+          <h2 className="text-3xl font-bold text-brand-navy">Care where you&apos;re staying</h2>
+          <p className="mt-2 text-slate-600">Poolside, on the terrace or in the living room. We set up wherever you are comfortable.</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {visits.map((v) => (
+              <Image
+                key={v.src}
+                src={v.src}
+                alt={v.alt}
+                width={765}
+                height={1020}
+                sizes="(min-width: 640px) 330px, 100vw"
+                className="aspect-[3/4] w-full rounded-2xl object-cover"
+              />
             ))}
           </div>
         </section>
