@@ -3,10 +3,10 @@ export const site = {
   name: "Cabo On Demand",
   url: "https://caboondemand.com",
   // Digits only, with country code, no "+". Used for wa.me links.
-  whatsappNumber: "5216240000000",
+  whatsappNumber: "5216242261023",
   // Shown on the page and used for tel: links.
-  phoneDisplay: "+52 624 000 0000",
-  phoneTel: "+526240000000",
+  phoneDisplay: "+52 624 226 1023",
+  phoneTel: "+526242261023",
   description:
     "Pharmacy delivery, IV therapy and doctors at your villa in Los Cabos. Bilingual registered nurses and physicians, USD pricing up front.",
 };
