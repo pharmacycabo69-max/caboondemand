@@ -17,6 +17,7 @@ export type Service = {
   description: string;
   price: string;
   meta?: string;
+  image: { src: string; alt: string };
   // Pre-filled WhatsApp message (without the "from ads" suffix, added automatically).
   message: string;
 };
@@ -28,6 +29,7 @@ export const services: Service[] = [
     description:
       "OTC and prescription medicine from a bilingual pharmacy, delivered to your room.",
     price: "From $25 delivery",
+    image: { src: "/photos/pharmacy.jpg", alt: "Courier handing a sealed pharmacy bag to a guest at a villa door in Los Cabos" },
     message: "Hi, I need medicine delivered",
   },
   {
@@ -37,6 +39,7 @@ export const services: Service[] = [
       "Hydration, hangover recovery, immunity and athletic recovery.",
     meta: "45–75 min",
     price: "From $129",
+    image: { src: "/photos/iv-kit.jpg", alt: "Nurse holding a sealed IV kit with the Los Cabos coast behind" },
     message: "Hi, I need an IV",
   },
   {
@@ -45,6 +48,7 @@ export const services: Service[] = [
     description:
       "A nurse at your villa for 4+ people, with per-person pricing.",
     price: "Message for a quote",
+    image: { src: "/photos/visit-terrace.jpg", alt: "Nurse preparing IV supplies while a group of guests relaxes on a villa terrace" },
     message: "Hi, I'd like a quote for a Group IV",
   },
   {
@@ -53,6 +57,7 @@ export const services: Service[] = [
     description:
       "Evaluation, diagnosis and treatment at your location.",
     price: "From $200",
+    image: { src: "/photos/doctor.jpg", alt: "Doctor with a stethoscope arriving at the door of a villa in Los Cabos" },
     message: "Hi, I need a doctor at my location",
   },
   {
@@ -60,6 +65,7 @@ export const services: Service[] = [
     title: "Video Consultation",
     description: "Talk to a doctor in minutes, from wherever you are.",
     price: "From $49",
+    image: { src: "/photos/video-consult.jpg", alt: "Guest on a villa terrace having a video consultation with a doctor on a phone" },
     message: "Hi, I'd like a video consultation with a doctor",
   },
   {
@@ -67,6 +73,7 @@ export const services: Service[] = [
     title: "Labs & Rapid Testing",
     description: "Lab work and rapid tests at your villa.",
     price: "From $59",
+    image: { src: "/photos/labs.jpg", alt: "Nurse collecting a blood sample from a guest in a villa living room" },
     message: "Hi, I need labs or a rapid test",
   },
 ];

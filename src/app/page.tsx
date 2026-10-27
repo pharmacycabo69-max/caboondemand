@@ -96,7 +96,16 @@ export default function Home() {
           <p className="mt-2 text-slate-600">Clear prices in USD. Confirmed before we come.</p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => (
-              <article key={s.id} className="flex flex-col rounded-2xl border border-slate-200 p-6 shadow-sm">
+              <article key={s.id} className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+                <Image
+                  src={s.image.src}
+                  alt={s.image.alt}
+                  width={880}
+                  height={660}
+                  sizes="(min-width: 1024px) 330px, (min-width: 640px) 50vw, 100vw"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-xl font-semibold text-brand-navy">{s.title}</h3>
                 <p className="mt-2 flex-1 text-slate-600">
                   {s.description}
@@ -110,6 +119,7 @@ export default function Home() {
                   variant="card"
                   className="mt-4 py-3"
                 />
+                </div>
               </article>
             ))}
           </div>
